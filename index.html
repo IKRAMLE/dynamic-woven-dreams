@@ -17,11 +17,11 @@
                     <li><a href="#products" class="text-white font-bold hover:text-black">Products</a></li>
                     <li><a href="#contact" class="text-white font-bold hover:text-black">Contact Us</a></li>
                     <li class="mr-6">
-                        <button id="basket-toggle" class="relative text-white font-bold hover:text-white">
+                        <button id="toggle" class="relative text-white font-bold hover:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="w-6 h-6 inline">
                                 <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192 32 192c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512L430 512c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32l-85.6 0L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192l-232.6 0L253.3 35.1zM192 304l0 96c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-96c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16l0 96c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-96c0-8.8 7.2-16 16-16zm128 16l0 96c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-96c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
                             </svg>
-                            <span id="basket-count" class="absolute top-0 right-0 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full -m-3">0</span>
+                            <span id="count" class="absolute top-0 right-0 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full -m-3">0</span>
                         </button>
                     </li>
                 </ul>
@@ -29,17 +29,17 @@
         </div>
     </header>    
   <!-- Hidden Sidebar for Basket -->
-  <div id="basket-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white border-l border-gray-300 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+  <div id="basketsidebar" class="fixed top-0 right-0 h-full w-80 bg-white border-l border-gray-300 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
     <div class="p-4">
         <h2 class="text-2xl font-bold mb-4">Your Basket</h2>
-        <ul id="basket-items" class="space-y-4"></ul>
+        <ul id="items" class="space-y-4"></ul>
         <button></button>
         <div class="mt-4">
-            <p id="total-price" class="text-lg font-semibold">Total: $0</p>
+            <p id="total" class="text-lg font-semibold">Total: $0</p>
             <button class="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition mt-4">Checkout</button>
         </div>
     </div>
-    <button id="close-basket" class="absolute top-2 right-2 text-black font-bold">&times;</button>
+    <button id="basketclose" class="absolute top-2 right-2 text-black font-bold">&times;</button>
 </div>
   <!-- Hero Section -->
   <section class="h-[624px] bg-cover bg-center text-center flex flex-col justify-center items-center text-blue-800" style="background-image: url('picpic.webp');">
@@ -192,6 +192,7 @@
 <footer class="bg-blue-400 text-white text-center py-4">
     <p class="text-black">&copy; 2024 Woven Dreams. All rights reserved.</p>
 </footer>
+
 
   
 </body>
