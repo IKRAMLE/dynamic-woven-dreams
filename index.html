@@ -208,7 +208,7 @@
     let basket = [];
 
     
-    function updateBasketUI() {
+    function updateBasketEl() {
         basketItems.innerHTML = '';
         let totalPrice = 0;
         basket.forEach((item, index) => {
@@ -236,7 +236,7 @@
             button.addEventListener('click', () => {
                 const index = button.dataset.index;
                 basket[index].quantity += 1;
-                updateBasketUI();
+                updateBasketEl();
             });
         });
 
@@ -248,7 +248,7 @@
                 } else {
                     basket.splice(index, 1); 
                 }
-                updateBasketUI();
+                updateBasketEl();
             });
         });
     }
@@ -267,11 +267,11 @@
                 basket.push({ name, price, image, quantity: 1 });
             }
 
-            updateBasketUI();
+            updateBasketEl();
         });
     });
 
-    // Show sidebar
+    // open sidebar
     basketToggle.addEventListener('click', () => {
         basketSidebar.classList.remove('translate-x-full'); 
         basketSidebar.classList.add('translate-x-0'); 
