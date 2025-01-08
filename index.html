@@ -28,12 +28,12 @@
             </nav>
         </div>
     </header>    
-  <!-- Hidden Sidebar for Basket -->
-  <div id="basketsidebar" class="fixed top-16 right-0 h-full w-80 bg-white border-l border-gray-300 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+<!-- Hidden Sidebar for Basket -->
+<div id="basketsidebar" class="fixed top-16 right-0 h-full w-80 bg-white border-l border-gray-300 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
     <div class="p-4">
         <h2 class="text-2xl font-bold mb-4">Your Basket</h2>
-        <ul id="items" class="space-y-4"></ul>
-        <button></button>
+        <ul id="items" class="space-y-4 overflow-y-auto max-h-96"> <!-- Tailwind classes for scrolling -->
+        </ul>
         <div class="mt-4">
             <p id="total" class="text-lg font-semibold">Total: $0</p>
             <button class="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition mt-4">Checkout</button>
@@ -41,6 +41,8 @@
     </div>
     <button id="basketclose" class="absolute top-2 right-2 text-black font-bold">&times;</button>
 </div>
+
+
   <!-- Hero Section -->
   <section class="h-[624px] bg-cover bg-center text-center flex flex-col justify-center items-center text-blue-800" style="background-image: url('picpic.webp');">
     <h2 class="text-4xl font-bold mb-4">Discover the Art of Crochet</h2>
@@ -59,121 +61,11 @@
 <section id="products" class="py-12">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-blue-400 text-center mb-10">Our Products</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Product 1 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet dolls.png" alt="Crochet Doll" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Doll</h3>
-                <p class="text-black mb-4">Adorable handmade dolls.</p>
-                <p class="text-lg font-bold mb-2">$30</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Doll" 
-                    data-price="30" 
-                    data-image="crochet dolls.png"
-                >Shop Now</button>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet scarf.png" alt="Crochet Scarf" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Scarf</h3>
-                <p class="text-black mb-4">Cozy and stylish scarves.</p>
-                <p class="text-lg font-bold mb-2">$25</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Scarf" 
-                    data-price="25" 
-                    data-image="crochet scarf.png"
-                >Shop Now</button>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet hats.png" alt="Crochet Hat" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Hat</h3>
-                <p class="text-black mb-4">Keep warm with style.</p>
-                <p class="text-lg font-bold mb-2">$20</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Hat" 
-                    data-price="20" 
-                    data-image="crochet hats.png"
-                >Shop Now</button>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet top.png" alt="Crochet Top" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Top</h3>
-                <p class="text-black mb-4">Chic handmade tops.</p>
-                <p class="text-lg font-bold mb-2">$35</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Top" 
-                    data-price="35" 
-                    data-image="crochet top.png"
-                >Shop Now</button>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet skirt.png" alt="Crochet Skirt" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Skirt</h3>
-                <p class="text-black mb-4">Elegant crochet skirts.</p>
-                <p class="text-lg font-bold mb-2">$40</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Skirt" 
-                    data-price="40" 
-                    data-image="crochet skirt.png"
-                >Shop Now</button>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet blanket.png" alt="Crochet Blanket" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Blanket</h3>
-                <p class="text-black mb-4">Soft and cozy blankets.</p>
-                <p class="text-lg font-bold mb-2">$50</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Blanket" 
-                    data-price="50" 
-                    data-image="crochet blanket.png"
-                >Shop Now</button>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet dress.png" alt="Crochet Dress" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Dress</h3>
-                <p class="text-black mb-4">Stunning crochet dresses.</p>
-                <p class="text-lg font-bold mb-2">$60</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Dress" 
-                    data-price="60" 
-                    data-image="crochet dress.png"
-                >Shop Now</button>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="bg-white border border-blue-400 rounded-lg shadow-md text-center p-6 hover:shadow-lg hover:-translate-y-1 transition">
-                <img src="crochet bags.png" alt="Crochet Bag" class="w-full h-[300px] object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Bag</h3>
-                <p class="text-black mb-4">Stylish handmade bags.</p>
-                <p class="text-lg font-bold mb-2">$45</p>
-                <button 
-                    class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
-                    data-name="Bag" 
-                    data-price="45" 
-                    data-image="crochet bags.png"
-                >Shop Now</button>
-            </div>
+        <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product cards will be generated here -->
         </div>
     </div>
-</section>    
+</section>
 
 <!-- Contact Us Section -->
 <section id="contact" class="py-12 bg-gray-100 text-center">
@@ -193,97 +85,9 @@
     <p class="text-black">&copy; 2024 Woven Dreams. All rights reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 
 
-
-<script>
-    
-    const basketToggle = document.getElementById('toggle'); 
-    const basketClose = document.getElementById('basketclose'); 
-    const basketSidebar = document.getElementById('basketsidebar'); 
-    const basketItems = document.getElementById('items'); 
-    const totalPriceElem = document.getElementById('total'); 
-    const basketCount = document.getElementById('count'); 
-
-    let basket = [];
-
-    
-    function updateBasketUI() {
-        basketItems.innerHTML = '';
-        let totalPrice = 0;
-        basket.forEach((item, index) => {
-            totalPrice += item.price * item.quantity;
-            basketItems.innerHTML += `
-                <li class="flex gap-4 items-center border-b pb-4">
-                    <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-md">
-                    <div class="flex-1">
-                        <h4 class="font-bold">${item.name}</h4>
-                        <p>Price: $${(item.price * item.quantity).toFixed(2)}</p>
-                        <div class="flex items-center gap-2 mt-2">
-                            <button class="decrease-qty bg-red-500 text-white px-2 py-1 rounded-md" data-index="${index}">-</button>
-                            <span>${item.quantity}</span>
-                            <button class="increase-qty bg-green-500 text-white px-2 py-1 rounded-md" data-index="${index}">+</button>
-                        </div>
-                    </div>
-                </li>
-            `;
-        });
-        totalPriceElem.textContent = `Total: $${totalPrice.toFixed(2)}`;
-        basketCount.textContent = basket.reduce((total, item) => total + item.quantity, 0);
-
-        
-        document.querySelectorAll('.increase-qty').forEach(button => {
-            button.addEventListener('click', () => {
-                const index = button.dataset.index;
-                basket[index].quantity += 1;
-                updateBasketUI();
-            });
-        });
-
-        document.querySelectorAll('.decrease-qty').forEach(button => {
-            button.addEventListener('click', () => {
-                const index = button.dataset.index;
-                if (basket[index].quantity > 1) {
-                    basket[index].quantity -= 1;
-                } else {
-                    basket.splice(index, 1); 
-                }
-                updateBasketUI();
-            });
-        });
-    }
-
-    // Add items
-    document.querySelectorAll('.add-to-basket').forEach(button => {
-        button.addEventListener('click', () => {
-            const name = button.dataset.name;
-            const price = parseFloat(button.dataset.price);
-            const image = button.dataset.image;
-
-            const existingItem = basket.find(item => item.name === name);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                basket.push({ name, price, image, quantity: 1 });
-            }
-
-            updateBasketUI();
-        });
-    });
-
-    // Show sidebar
-    basketToggle.addEventListener('click', () => {
-        basketSidebar.classList.remove('translate-x-full'); 
-        basketSidebar.classList.add('translate-x-0'); 
-    });
-
-    // Close sidebar
-    basketClose.addEventListener('click', () => {
-        basketSidebar.classList.add('translate-x-full'); 
-        basketSidebar.classList.remove('translate-x-0'); 
-    });
-</script>
-      
     </body>
     </html>
 
