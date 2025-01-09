@@ -9,18 +9,19 @@ let basket = [];
 
 
 const products = [
-    { name: "Doll", price: 30, image: "crochet dolls.png" },
-    { name: "Scarf", price: 25, image: "crochet scarf.png" },
-    { name: "Hat", price: 20, image: "crochet hats.png" },
-    { name: "Top", price: 35, image: "crochet top.png" },
-    { name: "Skirt", price: 40, image: "crochet skirt.png" },
-    { name: "Blanket", price: 50, image: "crochet blanket.png" },
-    { name: "Dress", price: 60, image: "crochet dress.png" },
-    { name: "Bag", price: 45, image: "crochet bags.png" },
+    { name: "Doll", price: 30, image: "crochet dolls.png", description: "Handcrafted crochet doll, perfect for kids." },
+    { name: "Scarf", price: 25, image: "crochet scarf.png", description: "Warm and stylish crochet scarf for chilly days." },
+    { name: "Hat", price: 20, image: "crochet hats.png", description: "Cozy crochet hat to keep you warm in winter." },
+    { name: "Top", price: 35, image: "crochet top.png", description: "Elegant crochet top for casual." },
+    { name: "Skirt", price: 40, image: "crochet skirt.png", description: "Chic crochet skirt, perfect for summer outings." },
+    { name: "Blanket", price: 50, image: "crochet blanket.png", description: "Soft and cozy crochet blanket for your home." },
+    { name: "Dress", price: 60, image: "crochet dress.png", description: "Beautiful crochet dress, perfect for any occasion." },
+    { name: "Bag", price: 45, image: "crochet bags.png", description: "Stylish crochet bag for your everyday needs." },
 ];
 
 
-function generateProductCards() {
+
+function generateCards() {
     const productsContainer = document.getElementById('products-container');
     products.forEach(product => {
         const productCard = document.createElement('div');
@@ -29,7 +30,7 @@ function generateProductCards() {
         productCard.innerHTML = `
             <img src="${product.image}" alt="${product.name}" class="w-full h-[300px] object-cover rounded-md mb-4">
             <h3 class="text-xl font-semibold mb-2">${product.name}</h3>
-            <p class="text-black mb-4">Description not available.</p>
+            <p class="text-black mb-4">${product.description}</p>
             <p class="text-lg font-bold mb-2">$${product.price}</p>
             <button 
                 class="add-to-basket bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-black transition"
@@ -42,6 +43,7 @@ function generateProductCards() {
         productsContainer.appendChild(productCard);
     });
 }
+
 
 
 function updateBasketEl() {
@@ -130,6 +132,6 @@ basketClose.addEventListener('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    generateProductCards();
+    generateCards();
     addToBasket();
 });
